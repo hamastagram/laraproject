@@ -81,9 +81,14 @@
                     <div class="title m-b-md">
                             <ul>
 
-                                <!-- compact -->
+                                <!-- compact function -->
+                                 <!-- task is collection of objects thats why if we 
+                                    echoing this out without porinting to an object
+                                     inside the table it will gives error messages
+                                    so we have to this task->[name of column] -->
+
                                 @foreach($tasks as $task)
-                                            <li> {{$task}} </li>
+                                            <li> {{$task->body}} </li>
                                 @endforeach
 
                             </ul>
