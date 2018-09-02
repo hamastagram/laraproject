@@ -17,17 +17,14 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     
-    //some dummy data here
-    $tasks = [
+    //some fetched data from database
 
-        'go home',
-        'shower',
-        'eat'
-    ];
+    $tasks = DB::table('tasks') -> get(); // fetch data from tasks table
     
     //compact function is a larevel function that output array of data
     
     return view('about', compact('tasks'));
+    //return $tasks; RUN THIS to see it in JSON FORMAT
 
 });
 
