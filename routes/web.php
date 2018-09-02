@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     
-    
+    //some dummy data here
     $tasks = [
 
         'go home',
@@ -25,6 +25,7 @@ Route::get('/about', function () {
         'eat'
     ];
     
+    //compact function is a larevel function that output array of data
     
     return view('about', compact('tasks'));
 
