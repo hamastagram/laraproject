@@ -21,7 +21,9 @@ Route::get('/about', function () {
     //some fetched data from database
 
     $tasks = DB::table('tasks') -> get(); // fetch data from tasks table
-    
+
+
+
     //compact function is a larevel function that output array of data
     
     return view('about', compact('tasks'));
@@ -31,6 +33,9 @@ Route::get('/about', function () {
 
 
 
+//maybe we need to foucs on specific task
+//we seperate that task and in this example we use 
+
 Route::get('/tasks/{id}', function ($id) {
     
     //some fetched data from database
@@ -38,12 +43,14 @@ Route::get('/tasks/{id}', function ($id) {
     // add conditions to tasks
 
    
-
-    $task = DB::table('tasks')->find($id); // fetch data from tasks table
+//var named $task is used for finding the id in this case and out put related data the availbe ID'S
+    $task = DB::table('tasks')->find($id); // fetch/retrieve data from tasks table
     
     //compact function is a larevel function that output array of data
     
     return view('task.show', compact('tasks'));
 });
+
+
 
 
