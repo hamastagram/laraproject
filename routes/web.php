@@ -10,10 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 Route::get('/about', function () {
     
@@ -27,4 +28,22 @@ Route::get('/about', function () {
     //return $tasks; RUN THIS to see it in JSON FORMAT
 
 });
+
+
+
+Route::get('/tasks/{id}', function ($id) {
+    
+    //some fetched data from database
+
+    // add conditions to tasks
+
+   
+
+    $task = DB::table('tasks')->find($id); // fetch data from tasks table
+    
+    //compact function is a larevel function that output array of data
+    
+    return view('task.show', compact('tasks'));
+});
+
 
