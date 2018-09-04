@@ -9,9 +9,22 @@
 <body>
     
 
-<h1>{{$task->body}}</h1>
 
+<ul>
 
+    <!-- $task->id $task i run through db WE
+         HAVE TO SPECIFY WHICH OBJECT TO PICK
+         HERE WE NEED ID ROW SO TASK POINT TO ID ROWS AND LOOP THROUGH IT
+    -->
+
+    @foreach($tasks as $task)
+<a href="/tasks/{{ $task->id }}">
+
+       <li>{{$task->body}}</li>
+</a>
+    @endforeach
+
+</ul>
 
 </body>
 </html>
